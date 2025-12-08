@@ -1,0 +1,43 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+/* Changing to dark mode by adding .dark class to body tag */
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme inline {
+  /* --color-primary: #025964; */
+  --color-primary: #222;
+  --color-text: white;
+  --color-text-2: #414445;
+  --color-hover: #28737d;
+  --color-accent: #03cf7c;
+  /* --color-hover: #26727d; */
+  --color-hover: #444;
+  --color-surface: #eef0f4;
+  --color-card: #fdfdfd;
+  --color-background: #fefefe;
+  --color-border: var(--color-slate-300);
+
+  --font-main: "Inter", sans-serif;
+  --font-outfit: "Outfit", sans-serif;
+}
+
+html {
+  overflow-x: hidden;
+  position: relative;
+}
+body {
+  background-color: var(--color-background);
+  overflow-x: hidden;
+  position: relative;
+  font-family: var(--font-outfit);
+}
+
+
+/* Applying `cursor pointer` on buttons */
+@layer base {
+  button:not(:disabled),
+  [role="button"]:not(:disabled) {
+    cursor: pointer;
+  }
+}
