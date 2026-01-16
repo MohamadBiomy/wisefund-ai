@@ -5,11 +5,13 @@ import App from './App.tsx'
 import { Provider } from 'react-redux'
 import store from './store/store.ts'
 import { BrowserRouter } from 'react-router-dom'
+import { IncomeProcessor } from './components/IncomeProcessor'
 
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
     <Provider store={store}>
       <BrowserRouter>
+        <IncomeProcessor />
         <App/>
       </BrowserRouter>
     </Provider>

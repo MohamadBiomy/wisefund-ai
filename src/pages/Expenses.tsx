@@ -1,11 +1,11 @@
 // import Alert from "@/components/Alert"
-import PageContainer from "./PageContainer"
+import PageContainer from "../components/PageContainer"
 import InputBoxContainer from "@/components/InputBoxContainer"
 import { Input } from "@/components/ui/input"
 import { Banknote, ChevronDownIcon } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { DatePicker } from "@/components/DatePicker"
-import { useEffect, useState } from "react"
+import { useState } from "react"
 import { useDispatch, useSelector } from "react-redux"
 import type { RootState } from "@/store/store"
 import {
@@ -65,13 +65,6 @@ function Expenses() {
       amount: amount as number,
       category
     }))
-
-    console.log({
-      date: date.toISOString(),
-      title,
-      amount: amount as number,
-      category
-    })
 
     // Decrease the balance
     // eslint-disable-next-line @typescript-eslint/no-unused-expressions
@@ -221,7 +214,7 @@ function Expenses() {
                       setSortBy(nextSort)
                       dispatch(expensesActions.UPDATE_SORT({ sortBy: nextSort }))
                     }}
-                    items={["recent", "title", "amount", "date", "category"]}
+                    items={["recently added", "title", "amount", "date", "category"]}
                   />
                 </div>
               </div>

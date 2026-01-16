@@ -37,7 +37,7 @@ function InputBox({ title, type = "text", buttonTitle, action, className = "" }:
         <span className="mb-1 lg:mb-2 block">{title}</span>
         <div className="flex items-center gap-1 lg:gap-2">
           <Input 
-          type={type} placeholder={type === "number" ? `000,000  ${currency}` : ""} className="w-70" 
+          type={type} placeholder={type === "number" ? `000,000 $` : "z"} className="w-70" 
           value={value} onInput={(e) => setValue(e.target.value)} onKeyUp={(e) => {
             return e.key === "Enter" && e.target.value ? trigger.current.click() : ''
           }}/>

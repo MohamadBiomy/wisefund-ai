@@ -3,6 +3,7 @@ import SideBarReducer from "./sidebarSlice";
 import BalanceReducer from "./balanceSlice";
 import CategoriesReducer from "./categoriesSlice";
 import ExpensesReducer from "./expensesSlice";
+import SourcesReducer from "./incomeSourcesSlice";
 import { loadState, saveState } from "./localStorage";
 
 // Load state from localStorage
@@ -13,7 +14,8 @@ const store = configureStore({
     sidebar: SideBarReducer,
     balance: BalanceReducer,
     categories: CategoriesReducer,
-    expenses: ExpensesReducer
+    expenses: ExpensesReducer,
+    incomeSources: SourcesReducer
   },
   preloadedState: persistedState,
 })

@@ -4,7 +4,7 @@ import type { RootState } from "../store/store"
 import { TOGGLE_BAR } from "../store/sidebarSlice"
 import Logo from "./Logo"
 import SideBarLink from "./SideBarLink"
-import { CircleGauge, HandCoins, Wallet } from "lucide-react"
+import { ArrowUpNarrowWide, CircleGauge, HandCoins, Wallet } from "lucide-react"
 
 // interface SideBarProps {
 //   className?: string
@@ -19,9 +19,12 @@ function SideBar() {
     <>
 
 
+
         <div className={`
-          bg-surface p-4 md:py-7 lg:py-8 md:px-5 lg:px-6 max-[768px]:rounded h-full
-          ${isOpened ? "left-0" : "-left-full"} max-w-[300px] w-[24%] min-w-[180px] max-[768px]:fixed transition-[left] duration-300 z-20 h-screen min-h-screen
+          bg-surface p-4 md:py-7 lg:py-8 md:px-5 lg:px-6 max-[768px]:rounded
+          max-w-[300px] w-[24%] min-w-[180px] overflow-y-auto transition-[left] duration-300 z-20
+          md:static md:left-0 md:top-auto md:bottom-auto
+          max-[768px]:fixed max-[768px]:top-0 max-[768px]:bottom-0 ${isOpened ? "max-[768px]:left-0" : "max-[768px]:-left-full"}
           `}> 
 
           <div className="flex items-center justify-between pb-2 md:pb-3 border-[#01586366]">
@@ -47,6 +50,10 @@ function SideBar() {
             <SideBarLink to="/expenses">
               <HandCoins className="w-3.5 lg:w-4.5 aspect-square" strokeWidth={2.4} />
               <span>Expenses</span>
+            </SideBarLink>
+            <SideBarLink to="/incomeSources">
+              <ArrowUpNarrowWide className="w-3.5 lg:w-4.5 aspect-square" strokeWidth={2.4} />
+              <span>Income Sources</span>
             </SideBarLink>
 
           </div>

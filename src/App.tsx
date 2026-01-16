@@ -5,6 +5,7 @@ import Dashboard from './pages/Dashboard'
 import Balance from './pages/Balance'
 import Expenses from './pages/Expenses'
 import NotFound from './pages/NotFound'
+import Sources from './pages/Sources'
 
 export interface InitialPropsType {
   className?: string
@@ -16,7 +17,7 @@ function App() {
 
   return (
     <>
-      <div className='flex'>
+      <div className='flex h-screen'>
         <SideBar/>
         <div className='flex-1'>
           <NavBar/>
@@ -24,6 +25,7 @@ function App() {
             <Route path='/' element={<Dashboard />} />
             <Route path='/balance' element={<Balance />} />
             <Route path='/expenses' element={<Expenses />} />
+            <Route path='/incomeSources' element={<Sources />} />
             <Route path='*' element={<NotFound />} />
           </Routes>
         </div>

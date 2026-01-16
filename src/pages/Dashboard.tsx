@@ -5,7 +5,7 @@ import { Link } from "react-router-dom"
 import ButtonSmall from "@/components/ButtonSmall"
 import { useSelector } from "react-redux"
 import type { RootState } from "@/store/store"
-import PageContainer from "./PageContainer"
+import PageContainer from "../components/PageContainer"
 
 function Dashboard() {
   const balance = useSelector((state: RootState) => state.balance.amount)

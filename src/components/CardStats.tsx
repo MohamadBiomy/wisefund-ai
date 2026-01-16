@@ -15,7 +15,7 @@ function CardStats({children, title, icon, ele1 = ""}: CardStatsProps) {
         <div className="flex items-center justify-between">
           <div className="flex items-center gap-1.5 lg:gap-2 mb-3 lg:mb-4">
             <div className="text-accent">{icon}</div>
-            <p className="text-[12px] lg:text-sm">{title}</p>
+            <p className="text-[12px] lg:text-sm capitalize">{title}</p>
           </div>
           {ele1}
         </div>

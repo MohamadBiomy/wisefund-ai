@@ -5,7 +5,7 @@ import { actions } from "@/store/balanceSlice"
 import type { RootState } from "@/store/store"
 import { ChartLine } from "lucide-react"
 import { useSelector } from "react-redux"
-import PageContainer from "./PageContainer"
+import PageContainer from "../components/PageContainer"
 
 function Balance() {
   const { amount: balance } = useSelector((state: RootState) => state.balance)

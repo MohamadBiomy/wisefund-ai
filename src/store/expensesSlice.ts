@@ -17,7 +17,7 @@ export interface ExpensesReducer {
 
 const initialState: ExpensesReducer = {
   expenses: [],
-  sortBy: "recent",
+  sortBy: "recent", 
   calcExpensesFrom: 30
 }
 
