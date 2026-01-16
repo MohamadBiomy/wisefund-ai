@@ -52,7 +52,7 @@ export function AddCategory() {
                     <Input
                       className="col-span-2 h-8"
                       value={value}
-                      onInput={(e) => setValue(e.target.value)}
+                      onInput={(e) => setValue((e.target as HTMLInputElement).value)}
                     />
 
                   </div>

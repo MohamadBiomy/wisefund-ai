@@ -119,7 +119,7 @@ function Expenses() {
             </div>
 
             <InputBoxContainer title="Title:">
-              <Input className="w-70" placeholder="Enter title:" value={title} onInput={(e) => setTitle(e.target.value)} />
+              <Input className="w-70" placeholder="Enter title:" value={title} onInput={(e) => setTitle((e.target as HTMLInputElement).value)} />
             </InputBoxContainer>
 
             <InputBoxContainer title="Amount:">

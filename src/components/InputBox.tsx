@@ -1,8 +1,7 @@
-import { useDispatch, useSelector } from "react-redux"
+import { useDispatch } from "react-redux"
 import { Button } from "./ui/button"
 import { Input } from "./ui/input"
 import type { InitialPropsType } from "@/App"
-import type { RootState } from "../store/store"
 import { useEffect, useRef, useState } from "react"
 import Alert from "./Alert"
 
@@ -14,9 +13,8 @@ interface InputBoxProps extends InitialPropsType {
 }
 
 function InputBox({ title, type = "text", buttonTitle, action, className = "" }: InputBoxProps) {
-  const { currency } = useSelector((state: RootState) => state.balance)
   const [value, setValue] = useState<string>("")
-  const trigger = useRef(null)
+  const trigger = useRef<HTMLButtonElement>(null)
   const dispatch = useDispatch()
 
   function submit() {
@@ -38,8 +36,9 @@ function InputBox({ title, type = "text", buttonTitle, action, className = "" }:
         <div className="flex items-center gap-1 lg:gap-2">
           <Input 
           type={type} placeholder={type === "number" ? `000,000 $` : "z"} className="w-70" 
-          value={value} onInput={(e) => setValue(e.target.value)} onKeyUp={(e) => {
-            return e.key === "Enter" && e.target.value ? trigger.current.click() : ''
+          value={value} onInput={(e) => setValue((e.target as HTMLInputElement).value)} onKeyUp={(e) => {
+            const target = e.target as HTMLInputElement
+            return e.key === "Enter" && target.value && trigger.current ? trigger.current.click() : ''
           }}/>
           <Alert title="Are you sure ?" description="Be aware, You cannot undo this action." actionWhenAccept={submit} trigger={
             <Button ref={trigger} variant="outline" onClick={(e) => !value ? e.preventDefault() : ""} className="bg-primary hover:border-white hover:bg-hover text-text capitalize">{buttonTitle}</Button>
